@@ -1,6 +1,6 @@
-# Inherit some common Lineage stuff
+# Inherit some common Project Elixir stuff
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Device
@@ -11,9 +11,14 @@ PRODUCT_BRAND := Nokia
 PRODUCT_DEVICE := DRG
 PRODUCT_MANUFACTURER := HMD Global
 PRODUCT_MODEL := Nokia 6.1 Plus
-PRODUCT_NAME := lineage_DRG
+PRODUCT_NAME := aosp_DRG
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE=DRG_sprout \
     PRODUCT_NAME=Dragon_00WW \
     PRIVATE_BUILD_DESC="Dragon_00WW 10 QKQ1.190828.002 00WW_4_150 release-keys"
+
+# Add Elixir Flags
+ELIXIR_BUILD_TYPE := OFFICIAL
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_SUPPORTS_CALL_RECORDING := true
